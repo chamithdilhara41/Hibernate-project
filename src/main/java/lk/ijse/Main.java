@@ -25,6 +25,7 @@ public class Main {
         //get
         Student student1 = session.get(Student.class, 1);
         System.out.println(student1.toString());
+        System.out.println(student1.getId() + ", " + student1.getAddress() + ", " +student1.getName()+", ");
         //commit
         transaction.commit();
         //Vehicle
@@ -32,7 +33,7 @@ public class Main {
         Transaction transaction1 = session1.beginTransaction();
         Vehicle vehicle = new Vehicle(1,"lorry","izuzu",2007);
         //save
-        session1.save(vehicle);
+        //session1.save(vehicle);
 
         //update
         //session1.update(vehicle);
@@ -42,7 +43,7 @@ public class Main {
 
         //get
         Vehicle vehicle1 = session1.get(Vehicle.class, 1);
-        System.out.println(vehicle1.getBrand());
+        System.out.println(vehicle1.getId() + ", " + vehicle1.getBrand() + ", " +vehicle1.getModel()+", "+vehicle1.getYom());
         transaction1.commit();
         session1.close();
     }
